@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="bc_mq.background_process.factory" class="Bc\BackgroundProcess\Factory">
+            <argument>Bc\BackgroundProcess\BackgroundProcess</argument>
+        </service>
+
+        <service id="bc_mq.event_loop.factory" class="React\EventLoop\Factory" />
+
+        <service id="bc_mq.event_loop" class="React\EventLoop\LoopInterface" factory-service="bc_mq.event_loop.factory" factory-method="create" />
+
+        <service id="bc_mq.socket" class="React\Socket\Server">
+            <argument type="service" id="bc_mq.event_loop" />
+        </service>
+
+        <service id="bc_mq.server" class="Bc\Mq\Server">
+            <argument type="service" id="bc_mq.background_process.factory" />
+            <argument type="service" id="bc_mq.event_loop" />
+            <argument type="service" id="bc_mq.socket" />
+        </service>
+
+    </services>
+
+</container>
