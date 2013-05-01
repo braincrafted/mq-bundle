@@ -6,7 +6,7 @@
 
     <services>
 
-        <service id="bc_mq.consumer" class="Bc\Bundle\MqBundle\ServiceConsumer">
+        <service id="bc_mq.consumer" class="Bc\Mq\ServiceConsumer">
             <argument>%bc_mq.consumers%</argument>
         </service>
 
