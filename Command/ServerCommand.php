@@ -13,8 +13,20 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * ServerCommand.
+ *
+ * @package    BcMqBundle
+ * @subpackage Command
+ * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
+ * @copyright  2013 Florian Eckerstorfer
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ */
 class ServerCommand extends ContainerAwareCommand
 {
+    /**
+     * {@inheritDoc}
+     */
     protected function configure()
     {
         $this
@@ -24,6 +36,9 @@ class ServerCommand extends ContainerAwareCommand
         ;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $port = $input->getOption('port');

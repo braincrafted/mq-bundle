@@ -13,9 +13,13 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * This is the class that loads and manages your bundle configuration
+ * BcMqExtension.
  *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ * @package    BcMqBundle
+ * @subpackage DependencyInjection
+ * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
+ * @copyright  2013 Florian Eckerstorfer
+ * @license    http://opensource.org/licenses/MIT The MIT License
  */
 class BcMqExtension extends Extension
 {

@@ -13,6 +13,15 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * ConsumerCommand.
+ *
+ * @package    BcMqBundle
+ * @subpackage Command
+ * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
+ * @copyright  2013 Florian Eckerstorfer
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ */
 class ConsumerCommand extends ContainerAwareCommand
 {
     /**
