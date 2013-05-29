@@ -46,7 +46,7 @@ BcMqBundle uses services (instead of callbacks) to consume messages. You can con
         consumers:
             write_file: acme_demo.consumer.write_file
 
-Now you need to define the service `acme_demo.consumer.write_file` in your bundles service configuration. You have to write those consumers by yourself. For example,
+Now you need to define the service `acme_demo.consumer.write_file` in your bundles service configuration. You have to write those consumers by yourself. An example is given below.
 
     <?php
     // src/Bc/Bundle/MqDemoBundle/Consumer/WriteFileConsumer.php
@@ -70,21 +70,33 @@ Now you need to define the service `acme_demo.consumer.write_file` in your bundl
 
 *Please note, that in this case `$message` is a string but you can also send more complex messages, for example, arrays. Everything that can be encoded as JSON can be sent.*
 
-If your consumers are in place you can start the message queue server and start sending messages.
+If your consumers are in place you can start the message queue server and send messages.
 
     $ php app/console bc:mq:server -p 4000
 
-The server will redirect every message that is sent to port `4000` to the consumers. Each message must be a JSON object and must contain exactly two values: `type` and `message`. Type is name name of the consumer (`write_file`) in the example above and message a string or an array.
+The server will redirect every message that is sent to port `4000` to the consumers. Each message must be a JSON object and must contain exactly two values: `type` and `message`. Type is name name of the consumer (`write_file` in the example above) and message is a string or an array.
 
     {
         "type": "write_file",
         "message": "Hello World!"
     }
 
-If you want to send the messages from your Symfony app you can use the producer provided by the bundle
+A complex message:
+
+    {
+        "type": "write_file",
+        "message": { "text": "Hello World!", "date": "2013-05-29" }
+    }
+
+If you want to send the messages from your Symfony app you can use the producer provided by the bundle.
 
     $producer = $container->get('bc_mq.producer');
     $producer->produce('write_file', 'Hello World!');
+
+The message can also be an array:
+
+    $producer = $container->get('bc_mq.producer');
+    $producer->produce('write_file', array('text' => 'Hello World!', 'time' => time());
 
 
 License
