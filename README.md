@@ -106,9 +106,14 @@ Changelog
 
 - Updated `braincrafted/mq` to version 0.2 (compatible with Symfony 2.3)
 
+### Version 0.1.1 (2013-06-04)
+
+- Fixed dependencies
+
 ### Version 0.1
 
 - Initial release
+
 
 License
 -------
