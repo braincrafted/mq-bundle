@@ -99,6 +99,18 @@ The message can also be an array:
     $producer->produce('write_file', array('text' => 'Hello World!', 'time' => time());
 
 
+Changelog
+---------
+
+### Version 0.1.1 (2013-06-04)
+
+- Fixed dependencies
+
+### Version 0.1
+
+- Initial release
+
+
 License
 -------
 
