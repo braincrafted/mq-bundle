@@ -99,6 +99,17 @@ The message can also be an array:
     $producer->produce('write_file', array('text' => 'Hello World!', 'time' => time());
 
 
+Changelog
+---------
+
+### Version 0.2 (2013-06-04)
+
+- Updated `braincrafted/mq` to version 0.2 (compatible with Symfony 2.3)
+
+### Version 0.1
+
+- Initial release
+
 License
 -------
 
