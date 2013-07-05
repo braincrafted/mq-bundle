@@ -74,6 +74,8 @@ If your consumers are in place you can start the message queue server and send m
 
     $ php app/console bc:mq:server -p 4000
 
+It is also possible to start the server in verbose mode by using the `--verbose` or `-v` option. If the verbose mode is activated, every bit of incoming data is echoed in the console.
+
 The server will redirect every message that is sent to port `4000` to the consumers. Each message must be a JSON object and must contain exactly two values: `type` and `message`. Type is name name of the consumer (`write_file` in the example above) and message is a string or an array.
 
     {
@@ -101,6 +103,11 @@ The message can also be an array:
 
 Changelog
 ---------
+
+### Version 0.3 (2013-07-05)
+
+- Updated `braincrafted/mq` to version 0.3
+- Incoming data is echoed in verbose mode
 
 ### Version 0.2 (2013-06-04)
 
