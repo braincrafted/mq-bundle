@@ -46,12 +46,20 @@ class ServerCommand extends ContainerAwareCommand
 
         $output->writeln(sprintf('Starting Message Queue Server at port %d', $port));
 
+        // If the verbose option is given, show received data in the command line.
+        if ($input->getOption('verbose')) {
+            $callback = function ($data) use ($output) {
+                $output->writeln(sprintf('<comment>Received data:</comment> %s', $data));
+            };
+        }
+
         $server->run(
             sprintf(
                 '`which php` %s/console bc:mq:consumer',
                 $this->getContainer()->getParameter('kernel.root_dir')
             ),
-            $port
+            $port,
+            $callback
         );
 
     }
