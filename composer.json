@@ -8,7 +8,7 @@
         "mockery/mockery": "0.8.*"
     },
     "autoload": {
-        "psr-0": { "Bc\\Bundle\\MqBundle": "" }
+        "psr-0": { "Braincrafted\\Bundle\\MqBundle": "" }
     },
-    "target-dir": "Bc/Bundle/MqBundle"
+    "target-dir": "Braincrafted/Bundle/MqBundle"
 }

@@ -1,11 +1,11 @@
 <?php
 /**
- * This file is part of BcMqBundle.
+ * This file is part of BraincraftedMqBundle.
  *
  * (c) 2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\MqBundle\Command;
+namespace Braincrafted\Bundle\MqBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -16,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * ServerCommand.
  *
- * @package    BcMqBundle
+ * @package    BraincraftedMqBundle
  * @subpackage Command
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
@@ -30,7 +30,7 @@ class ServerCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('bc:mq:server')
+            ->setName('braincrafted:mq:server')
             ->setDescription('Message Queue Server')
             ->addOption('port', 'p', InputOption::VALUE_REQUIRED, 'The port the server should listen on')
         ;
@@ -42,7 +42,7 @@ class ServerCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $port = $input->getOption('port');
-        $server = $this->getContainer()->get('bc_mq.server');
+        $server = $this->getContainer()->get('braincrafted_mq.server');
 
         $output->writeln(sprintf('Starting Message Queue Server at port %d', $port));
 
@@ -51,11 +51,14 @@ class ServerCommand extends ContainerAwareCommand
             $callback = function ($data) use ($output) {
                 $output->writeln(sprintf('<comment>Received data:</comment> %s', $data));
             };
+        } else {
+            $callback = function ($data) {
+            };
         }
 
         $server->run(
             sprintf(
-                '`which php` %s/console bc:mq:consumer',
+                '`which php` %s/console braincrafted:mq:consumer',
                 $this->getContainer()->getParameter('kernel.root_dir')
             ),
             $port,

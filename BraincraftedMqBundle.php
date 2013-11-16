@@ -1,22 +1,22 @@
 <?php
 /**
- * This file is part of BcMqBundle.
+ * This file is part of BraincraftedMqBundle.
  *
  * (c) 2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\MqBundle;
+namespace Braincrafted\Bundle\MqBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * BcMqBundle.
+ * BraincraftedMqBundle.
  *
- * @package    BcMqBundle
+ * @package    BraincraftedMqBundle
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
  * @license    http://opensource.org/licenses/MIT The MIT License
  */
-class BcMqBundle extends Bundle
+class BraincraftedMqBundle extends Bundle
 {
 }

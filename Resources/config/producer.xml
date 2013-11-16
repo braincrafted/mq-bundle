@@ -6,9 +6,9 @@
 
     <services>
 
-        <service id="bc_mq.producer" class="Bc\Mq\Producer">
-            <argument>%bc_mq.producer.hostname%</argument>
-            <argument>%bc_mq.producer.port%</argument>
+        <service id="braincrafted_mq.producer" class="Braincrafted\Mq\Producer">
+            <argument>%braincrafted_mq.producer.hostname%</argument>
+            <argument>%braincrafted_mq.producer.port%</argument>
         </service>
 
     </services>

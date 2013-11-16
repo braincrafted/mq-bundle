@@ -6,8 +6,8 @@
 
     <services>
 
-        <service id="bc_mq.consumer" class="Bc\Mq\ServiceConsumer">
-            <argument>%bc_mq.consumers%</argument>
+        <service id="braincrafted_mq.consumer" class="Braincrafted\Mq\ServiceConsumer">
+            <argument>%braincrafted_mq.consumers%</argument>
         </service>
 
     </services>

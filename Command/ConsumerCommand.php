@@ -1,11 +1,11 @@
 <?php
 /**
- * This file is part of BcMqBundle.
+ * This file is part of BraincraftedMqBundle.
  *
  * (c) 2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\MqBundle\Command;
+namespace Braincrafted\Bundle\MqBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -16,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * ConsumerCommand.
  *
- * @package    BcMqBundle
+ * @package    BraincraftedMqBundle
  * @subpackage Command
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
@@ -30,7 +30,7 @@ class ConsumerCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('bc:mq:consumer')
+            ->setName('braincrafted:mq:consumer')
             ->setDescription('Message Consumer')
             ->addArgument('message', InputArgument::REQUIRED, 'The consumed message')
         ;
@@ -41,7 +41,7 @@ class ConsumerCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $consumer = $this->getContainer()->get('bc_mq.consumer');
+        $consumer = $this->getContainer()->get('braincrafted_mq.consumer');
         $consumer->setContainer($this->getContainer());
 
         $consumer->consume($input->getArgument('message'));

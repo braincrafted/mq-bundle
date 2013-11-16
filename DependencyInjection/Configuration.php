@@ -1,11 +1,11 @@
 <?php
 /**
- * This file is part of BcMqBundle.
+ * This file is part of BraincraftedMqBundle.
  *
  * (c) 2013 Florian Eckerstorfer
  */
 
-namespace Bc\Bundle\MqBundle\DependencyInjection;
+namespace Braincrafted\Bundle\MqBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 /**
  * Configuration.
  *
- * @package    BcMqBundle
+ * @package    BraincraftedMqBundle
  * @subpackage DependencyInjection
  * @author     Florian Eckerstorfer <florian@eckerstorfer.co>
  * @copyright  2013 Florian Eckerstorfer
@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('bc_mq');
+        $rootNode = $treeBuilder->root('braincrafted_mq');
 
         $rootNode
             ->children()
