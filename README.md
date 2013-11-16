@@ -104,6 +104,11 @@ The message can also be an array:
 Changelog
 ---------
 
+### Version 0.4 (2013-11-16)
+
+- Changed namespace to `Braincrafted`
+- Fixed bug with empty callback in server
+
 ### Version 0.3 (2013-07-05)
 
 - Updated `braincrafted/mq` to version 0.3
