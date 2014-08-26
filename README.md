@@ -1,7 +1,7 @@
-BcMqBundle
+BraincraftedMqBundle
 ==========
 
-BcMqBundle wraps [BcMq](https://github.com/braincrafted/mq) into a nice bundle for Symfony2 to provide you with a PHP implementation of a Message Queue Sever.
+BraincraftedMqBundle wraps [BcMq](https://github.com/braincrafted/mq) into a nice bundle for Symfony2 to provide you with a PHP implementation of a Message Queue Sever.
 
 By [Florian Eckerstorfer](http://florianeckerstorfer.com).
 
@@ -9,7 +9,7 @@ By [Florian Eckerstorfer](http://florianeckerstorfer.com).
 Installation
 ------------
 
-The recommended way of installing BcMqBundle is through Composer.
+The recommended way of installing BraincraftedMqBundle is through Composer.
 
 ```json
 #composer.json
@@ -28,7 +28,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Bc\Bundle\MqBundle\BcMqBundle()
+        new Braincrafted\Bundle\MqBundle\BraincraftedMqBundle()
     );
 
     // ...
