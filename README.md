@@ -40,12 +40,12 @@ public function registerBundles()
 Usage
 -----
 
-BcMqBundle uses services (instead of callbacks) to consume messages. You can configure those consumers in your `config.yml`.
+BraincraftedMqBundle uses services (instead of callbacks) to consume messages. You can configure those consumers in your `config.yml`.
 
 # app/config/config.yml
 
 ```yaml
-bc_mq:
+braincrafted_mq:
     consumers:
         write_file: acme_demo.consumer.write_file
 ```
@@ -54,9 +54,9 @@ Now you need to define the service `acme_demo.consumer.write_file` in your bundl
 
 ```php
 <?php
-// src/Bc/Bundle/MqDemoBundle/Consumer/WriteFileConsumer.php
+// src/Braincrafted/Bundle/MqDemoBundle/Consumer/WriteFileConsumer.php
 
-namespace Bc\Bundle\MqDemoBundle\Consumer;
+namespace Braincrafted\Bundle\MqDemoBundle\Consumer;
 
 class WriteFileConsumer
 {
@@ -79,7 +79,7 @@ class WriteFileConsumer
 If your consumers are in place you can start the message queue server and send messages.
 
 ```bash
-$ php app/console bc:mq:server -p 4000
+$ php app/console braincrafted:mq:server -p 4000
 ```
 
 It is also possible to start the server in verbose mode by using the `--verbose` or `-v` option. If the verbose mode is activated, every bit of incoming data is echoed in the console.
@@ -105,14 +105,14 @@ A complex message:
 If you want to send the messages from your Symfony app you can use the producer provided by the bundle.
 
 ```php
-$producer = $container->get('bc_mq.producer');
+$producer = $container->get('braincrafted_mq.producer');
 $producer->produce('write_file', 'Hello World!');
 ```
 
 The message can also be an array:
 
 ```php
-$producer = $container->get('bc_mq.producer');
+$producer = $container->get('braincrafted_mq.producer');
 $producer->produce('write_file', array('text' => 'Hello World!', 'time' => time());
 ```
 
